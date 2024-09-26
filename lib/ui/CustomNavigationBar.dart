@@ -14,8 +14,8 @@ class CustomBottomNavigationBar extends StatefulWidget {
       {this.backgroundColor = BACKGROUND_COLOR,
         this.itemColor = PRIMARY_COLOR,
         this.currentIndex = 0,
-        @required this.children,
-        this.onChange});
+        required this.children,
+        required this.onChange});
 
   @override
   _CustomBottomNavigationBarState createState() =>
@@ -108,5 +108,5 @@ class CustomBottomNavigationItem {
   final Color color;
 
   CustomBottomNavigationItem(
-      {@required this.icon, @required this.label, this.color});
+      {required this.icon, required this.label, required this.color});
 }

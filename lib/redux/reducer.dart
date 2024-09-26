@@ -13,7 +13,9 @@ AppState UIReducer(AppState state, dynamic action) {
             ? action.updatedPodcast
             : aPodcast)
             .toList(),
-        bottomNavIndex : state.bottomNavIndex
+        bottomNavIndex : state.bottomNavIndex,
+        searchedText: state.searchedText,
+        homeState: state.homeState
     );
   }
 
@@ -21,7 +23,9 @@ AppState UIReducer(AppState state, dynamic action) {
     int updatedNavBarIndex = action.updatedNavBarIndex;
     return AppState(
         podcastsList: state.podcastsList,
-        bottomNavIndex : updatedNavBarIndex
+        bottomNavIndex : updatedNavBarIndex,
+        searchedText: state.searchedText,
+        homeState: state.homeState
     );
   }
 
@@ -31,6 +35,7 @@ AppState UIReducer(AppState state, dynamic action) {
       searchedText: action.searchedText,
       podcastsList: state.podcastsList,
       bottomNavIndex : state.bottomNavIndex,
+        homeState: state.homeState
     );
   }
   return state;

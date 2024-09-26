@@ -1,15 +1,13 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import './data/models.dart';
 import './episode.dart';
 import './ui/AppStyles.dart';
-import './data/models.dart';
 
 class Podcast extends StatelessWidget {
 
-  PodcastModel podcast;
-  Podcast({this.podcast});
+  final PodcastModel podcast;
+  Podcast(this.podcast);
 
   @override
   Widget build(BuildContext context) {
@@ -156,8 +154,8 @@ class Podcast extends StatelessWidget {
 }
 
 class PodcastWidget extends StatelessWidget {
-  const PodcastWidget({
-    Key key,
+   PodcastWidget({
+    Key? key,
     this.img,
     this.podcastName,
     this.podcastDescription,
@@ -165,20 +163,21 @@ class PodcastWidget extends StatelessWidget {
     this.icon,
   }) : super(key: key);
 
-  final String img;
-  final String podcastName;
-  final String podcastDescription;
-  final Color color;
-  final Icon icon;
-
+  final String? img;
+  final String? podcastName;
+  final String? podcastDescription;
+  final Color? color;
+  final Icon? icon;
+ late final PodcastModel podcast ;
   @override
   Widget build(BuildContext context) {
+    
     return GestureDetector(
         onTap: () {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => Podcast()));
+                  builder: (context) => Podcast(podcast)));
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -186,18 +185,18 @@ class PodcastWidget extends StatelessWidget {
             Row(
               children: [
                 //Image.asset(img),
-                Image.asset(img, width: 65, height: 65),
+                Image.asset(img!, width: 65, height: 65),
                 //Image(image: Image.asset(img), width: 70, height: 70),
                 SizedBox(width: 20),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      podcastName,
+                      podcastName!,
                       style: TextStyle(fontSize: 15),
                     ),
                     Text(
-                      podcastDescription,
+                      podcastDescription!,
                       style: TextStyle(color: Colors.grey),
                     )
                   ],

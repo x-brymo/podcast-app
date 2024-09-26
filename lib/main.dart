@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         podcastsList : Api.podcastsList,
         bottomNavIndex: 0,
         searchedText : "",
+        homeState : "home"
     )
   );
 
@@ -54,15 +55,15 @@ class MyApp extends StatelessWidget {
                 children: [
                   CustomBottomNavigationItem(
                     icon: Icons.home,
-                    label: 'Home',
+                    label: 'Home', color: Colors.deepOrangeAccent,
                   ),
                   CustomBottomNavigationItem(
                     icon: Icons.favorite_outline_rounded,
-                    label: 'Favorite',
+                    label: 'Favorite', color: Colors.deepPurple,
                   ),
                   CustomBottomNavigationItem(
                     icon: Icons.info_outline_rounded,
-                    label: 'About',
+                    label: 'About', color: Colors.deepPurpleAccent,
                   ),
                 ],
                 onChange: (index) {

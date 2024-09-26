@@ -77,7 +77,7 @@ class HomePage extends StatelessWidget {
                               ),
                               child: IconButton(
                                 icon: Icon(Icons.search, size: 20),
-                                color: AppStyles.tertiaryColor,
+                                color: AppStyles.tertiaryColor, onPressed: () {  },
                               ),)
                         ),
                         onChanged: (text) {
@@ -122,7 +122,7 @@ class PodcastsListWidget extends StatelessWidget {
               if(aPodcast.name.toLowerCase().contains(word)) {
                 //print("word : " + word);
                 doesContain = true;
-                return true;
+                return ;
                 }
             }
           );
@@ -161,7 +161,7 @@ class PodcastWidget extends StatelessWidget /*StatelessWidget*/ {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Podcast(podcast: podcastModel)));
+                        builder: (context) => Podcast(podcastModel)));
               },
               child: Row (
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

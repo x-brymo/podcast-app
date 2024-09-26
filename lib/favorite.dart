@@ -107,7 +107,7 @@ class PodcastWidget extends StatelessWidget /*StatelessWidget*/ {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => Podcast()));
+                      builder: (context) => Podcast(podcastModel)));
             },
             child: Row (
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
